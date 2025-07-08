@@ -92,7 +92,7 @@ def crear_estudiante(request):
 
 
 # @login_required(login_url='/entrando/login/')
-@login_required
+@login_required # Se puede usar login_required sin el parámetro de login_url, ya que la url de redireccionamiento al login ya está definida en settings.py
 @permission_required('administrativo.change_estudiante',)
 def editar_estudiante(request, id):
     """
