@@ -91,7 +91,8 @@ def crear_estudiante(request):
     return render(request, 'crearEstudiante.html', diccionario)
 
 
-@login_required(login_url='/entrando/login/')
+# @login_required(login_url='/entrando/login/')
+@login_required
 @permission_required('administrativo.change_estudiante',)
 def editar_estudiante(request, id):
     """
