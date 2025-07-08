@@ -111,6 +111,8 @@ def editar_estudiante(request, id):
     return render(request, 'editarEstudiante.html', diccionario)
 
 
+@login_required
+@permission_required('administrativo.delete_estudiante',)
 def eliminar_estudiante(request, id):
     """
     """
@@ -143,6 +145,7 @@ def crear_numero_telefonico(request):
     return render(request, 'crearNumeroTelefonico.html', diccionario)
 
 
+@en_grupo('supervisor')
 def editar_numero_telefonico(request, id):
     """
     """
@@ -159,6 +162,7 @@ def editar_numero_telefonico(request, id):
 
     return render(request, 'crearNumeroTelefonico.html', diccionario)
 
+@en_grupo('supervisor')
 def crear_numero_telefonico_estudiante(request, id):
     """
     """
